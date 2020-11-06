@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring04_aopTx" />
+        <module name="generator" />
+        <module name="permission" />
+        <module name="ssm" />
+        <module name="Spring02" />
+        <module name="day03_mybatis" />
+        <module name="Spring01" />
+        <module name="day04_mybatis" />
+        <module name="jedis" />
+        <module name="ssm_1001" />
+        <module name="Spring03_tx" />
+        <module name="SpringMVC01_rumen" />
+        <module name="SpringMVC02" />
+        <module name="day05_mybatis" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring03_aop" target="1.8" />
+      <module name="Spring04_aop_tx" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

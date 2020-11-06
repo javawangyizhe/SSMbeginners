@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.mapper.CustomerMapper">
+    <resultMap id="customerMap" type="com.offcn.pojo.Customer">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <collection property="orders" javaType="list" ofType="com.offcn.pojo.Orders" >
+            <id column="oid" property="oid"></id>
+            <result column="odis" property="odis"></result>
+            <result column="onum" property="onum"></result>
+        </collection>
+    </resultMap>
+
+    <!--通过name查找customer和其orders:Customer findCustomerByName(String name);-->
+    <select id="findCustomerByName" resultMap="customerMap" parameterType="String">
+        SELECT
+        c.`id`,
+        c.`name`,
+        o.`oid`,
+        o.`odis`,
+        o.`onum`
+        FROM customer c
+        LEFT JOIN orders o
+        ON c.`id`=o.`cus_fk`
+        WHERE c.`name`=#{name}
+    </select>
+
+    <resultMap id="customerMap2" type="com.offcn.pojo.Customer" >
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <collection property="orders"
+                    column="id"
+                    select="com.offcn.mapper.OrdersMapper.findOrdersById"
+                    fetchType="lazy"
+        ></collection>
+
+    </resultMap>
+    <!--分步查询：Customer findCustomer(String name);-->
+    <select id="findCustomer" resultMap="customerMap2">
+        select * from customer where name =#{name}
+    </select>
+</mapper>

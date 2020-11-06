@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.example.BlogMapper">
+    <!-- 增加   -->
+    <insert id="insertUser">
+        insert into users(uid,uname,upwd) value (#{uid},#{uname},#{upwd})
+    </insert>
+    <!-- 删除   -->
+    <delete id="deleteUserById">
+        delete from users where uid = #{uid}
+    </delete>
+    <!--  修改  -->
+    <update id="updateUserById">
+        update users set uname=#{uname},upwd=#{upwd} where uid=#{uid}
+    </update>
+    <!-- 查询   -->
+    <select id="findAllUsers" resultType="com.offcn.pojo.User">
+        select * from users
+    </select>
+</mapper>

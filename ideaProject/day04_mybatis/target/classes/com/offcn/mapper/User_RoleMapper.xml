@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.pojo.User_RoleMapper">
+    <resultMap id="UserMap" type="users">
+        <id column="uid" property="uid"></id>
+        <result column="username" property="username"></result>
+
+    </resultMap>
+
+    <select id="findUserById" parameterType="integer" resultMap="UserMap">
+       SELECT * FROM users u,user_role ur WHERE u.`uid`=ur.`UID` AND ur.`RID`=#{id}
+    </select>
+    <select id="findAllUser" resultMap="UserMap">
+        SELECT * FROM users u,user_role ur WHERE u.`uid`=ur.`UID` AND ur.`RID`=#{id}
+    </select>
+
+</mapper>

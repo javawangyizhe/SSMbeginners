@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.offcn.pojo.Role">
+    <id column="roleid" jdbcType="INTEGER" property="roleid" />
+    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+    <result column="roledis" jdbcType="VARCHAR" property="roledis" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <!--void insertRole(Role role);-->
+  <insert id="insertRole" useGeneratedKeys="true" keyProperty="roleid">
+     INSERT INTO role(rolename,roledis,status) VALUES(#{rolename},#{roledis},#{status})
+  </insert>
+
+  <!--List<Role> findAllRoles();-->
+  <select id="findAllRoles" resultMap="BaseResultMap">
+    select * from role
+  </select>
+
+  <!--Role findRoleById(Integer id);-->
+  <select id="findRoleById" resultMap="BaseResultMap">
+    select * from role where roleid=#{id}
+  </select>
+
+  <!--void updateRole(Role role);-->
+  <update id="updateRole">
+    UPDATE role
+    SET
+    rolename =#{rolename},
+    roledis=#{roledis},
+    status=#{status}
+    WHERE roleid =#{roleid}
+  </update>
+
+  <!--void deleteRoleById(Integer id);-->
+  <delete id="deleteRoleById" >
+    delete from role where roleid=#{roleid}
+  </delete>
+  
+</mapper>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.offcn.mapper.EmployeeMapper" >
+
+  <resultMap id="BaseResultMap" type="com.offcn.pojo.Employee" >
+    <id column="eid" property="eid" jdbcType="INTEGER" />
+    <result column="ename" property="ename" jdbcType="VARCHAR" />
+    <result column="esex" property="esex"  />
+    <result column="eage" property="eage" jdbcType="INTEGER" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="hiredate" property="hiredate" jdbcType="DATE" />
+    <result column="pnum" property="pnum" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="dfk" property="dfk" jdbcType="INTEGER" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+  </resultMap>
+<!--List<Employee> findEmpByDid(Integer id);-->
+  <select id="findEmpByDid" resultMap="BaseResultMap">
+    select * from employee where dfk=#{id}
+  </select>
+
+  <!--List<Employee> findAllEmps();-->
+  <select id="findAllEmps" resultMap="BaseResultMap">
+    select * from employee
+  </select>
+
+  <!--List<Employee> findAllEmpsWithCondition
+  (@Param("condition") String condition,@Param("type") Integer type);-->
+  <select id="findAllEmpsWithCondition" resultMap="BaseResultMap">
+    select * from employee
+    <where>
+      <if test="type == 1">
+       and ename like concat('%',concat(#{condition},'%'))
+      </if>
+      <if test="type == 2">
+        and dfk like concat('%',concat(#{condition},'%'))
+      </if>
+      <if test="type == 3">
+        and esex like #{condition}
+      </if>
+      <if test="type == 4">
+        and eage like concat('%',concat(#{condition},'%'))
+      </if>
+      <if test="type == 5">
+        and telephone like concat('%',concat(#{condition},'%'))
+      </if>
+    </where>
+  </select>
+
+<!--void insertEmp(Employee employee);-->
+  <insert id="insertEmp" useGeneratedKeys="true" keyProperty="eid">
+    INSERT INTO `prometion`.`employee` (
+  `ename`,
+  `esex`,
+  `eage`,
+  `telephone`,
+  `hiredate`,
+  `pnum`,
+  `username`,
+  `password`,
+  `remark`,
+  `dfk`
+)
+VALUES
+  (#{ename},#{esex},#{eage},#{telephone},#{hiredate},#{pnum},#{username},#{password},#{remark},#{dfk}) ;
+  </insert>
+
+  <!-- Employee findEmpByEid(Integer eid);-->
+  <select id="findEmpByEid" resultMap="BaseResultMap">
+    select * from employee where eid=#{eid}
+  </select>
+
+  <!--void updateEmp(Employee employee);-->
+  <update id="updateEmp" >
+    UPDATE
+  `prometion`.`employee`
+    SET
+  `ename` = #{ename},
+  `esex` =#{esex},
+  `eage` =#{eage},
+  `telephone` = #{telephone},
+  `hiredate` = #{hiredate},
+  `pnum` = #{pnum},
+  `username` = #{username},
+  `password` = #{password},
+  `remark` = #{remark},
+  `dfk` = #{dfk}
+    WHERE eid = #{eid}
+  </update>
+
+  <!--void deleteEmpByEId(Integer eid);-->
+  <delete id="deleteEmpByEId">
+    delete from employee where eid= #{eid}
+  </delete>
+</mapper>

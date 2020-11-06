@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Spring01/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring01/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring02/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring02/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring03_tx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring03_tx/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring04_aopTx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring04_aopTx/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC01_rumen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC01_rumen/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC02/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC02/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day03_mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day03_mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day04_mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day04_mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day05_mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day05_mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/generator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jedis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jedis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/permission/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/permission/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm_1001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm_1001/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

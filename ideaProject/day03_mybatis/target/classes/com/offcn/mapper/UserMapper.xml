@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.mapper.UserMapper">
+    <!--User findUserById(Integer uid);-->
+    <select id="findUserById" parameterType="int" resultType="user">
+        select * from users where uid = #{uid}
+    </select>
+
+    <!--List<User> findAllUser();    -->
+    <select id="findAllUser" resultType="user">
+        select * from users
+    </select>
+
+    <!--List<User> findUserByName(String uname);    -->
+    <select id="findUserByName" parameterType="string" resultType="user">
+        select * from users where uname like #{uname}
+    </select>
+
+    <!--Integer findCount();-->
+    <select id="findCount" resultType="int">
+        select count(*) from users
+    </select>
+
+    <!--Integer insertUser(User user);;-->
+    <insert id="insertUser" parameterType="user" keyColumn="uid" useGeneratedKeys="true">
+        insert into users(uname,upwd) values(#{uname},#{upwd})
+    </insert>
+
+    <!--Integer updateUser(User user);-->
+    <update id="updateUser" parameterType="user" >
+        update users set uname = #{uname},upwd = #{upwd} where uid = #{uid}
+    </update>
+
+    <!--void deleteUserById(Integer uid);-->
+    <delete id="deleteUserById" parameterType="int">
+        delete from users where uid = #{uid}
+    </delete>
+</mapper>

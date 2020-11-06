@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.offcn.mapper.EmpRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.offcn.pojo.EmpRole" >
+    <id column="erid" property="erid" jdbcType="INTEGER" />
+    <result column="role_fk" property="roleFk" jdbcType="INTEGER" />
+    <result column="emp_fk" property="empFk" jdbcType="INTEGER" />
+    <result column="erdis" property="erdis" jdbcType="VARCHAR" />
+  </resultMap>
+  <!--List<EmpRole> findRoleByRid(Integer id);-->
+  <select id="findRoleByRid" resultMap="BaseResultMap">
+    SELECT * FROM emp_role WHERE role_fk = #{roleid}
+  </select>
+</mapper>

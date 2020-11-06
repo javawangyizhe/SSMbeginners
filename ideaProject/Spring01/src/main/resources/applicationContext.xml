@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <bean id="card" class="com.offcn.pojo.Card"></bean>-->
+
+<!--    <bean id="cardservice" class="com.offcn.service.impl.CardServiceImpl"></bean>-->
+<!--    <bean id="carddao" class="com.offcn.dao.impl.CardDaoImpl"></bean>-->
+
+<!--    <bean id="mystaticfactory" class="com.offcn.utils.MyStaticFactory" factory-method="getBean" />-->
+
+<!--    <bean id="myinstancefactory" class="com.offcn.utils.MyInstanceFactory"></bean>-->
+<!--    <bean id="card2" factory-bean="myinstancefactory" factory-method="getBean"/>-->
+
+<!--    <bean id="card3" class="com.offcn.pojo.Card" init-method="init" destroy-method="destroy"/>-->
+
+<!--        <bean id="card4" class="com.offcn.pojo.Card" scope="singleton">-->
+<!--            <constructor-arg name="name" value="wangwu"></constructor-arg>-->
+<!--            <constructor-arg name="num" value="8"></constructor-arg>-->
+<!--        </bean>-->
+
+<!--    <bean id="card5" class="com.offcn.pojo.Card" scope="singleton">-->
+<!--        <property name="name" value="张三"></property>-->
+<!--        <property name="num" value="007"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="card6" class="com.offcn.pojo.Card" scope="singleton" p:name="田七" p:num="001"></bean>-->
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql:///mybatis_system"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="root"></property>
+    </bean>
+</beans>

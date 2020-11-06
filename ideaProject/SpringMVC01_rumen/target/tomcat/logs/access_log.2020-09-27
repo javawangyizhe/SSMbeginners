@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:11:16:15 +0800] "GET / HTTP/1.1" 200 611 http-bio-8080-exec-1 43
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:11:16:19 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-3 11
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:45:04 +0800] "GET / HTTP/1.1" 200 662 http-bio-8080-exec-1 438
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:45:04 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-3 21
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:45:04 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:45:05 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:45:08 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-6 1
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:47:02 +0800] "GET / HTTP/1.1" 200 664 http-bio-8080-exec-8 61
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:47:02 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-10 3
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:08 +0800] "GET / HTTP/1.1" 200 711 http-bio-8080-exec-3 45
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:08 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:08 +0800] "GET /js/jquery.validate.js HTTP/1.1" 404 949 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:11 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:37 +0800] "GET / HTTP/1.1" 200 711 http-bio-8080-exec-8 2
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:37 +0800] "GET /css/style.css HTTP/1.1" 404 949 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [27/Sep/2020:13:55:37 +0800] "GET /js/jquery.validate.js HTTP/1.1" 404 949 http-bio-8080-exec-8 2

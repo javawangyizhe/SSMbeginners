@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.offcn.mapper.StudentMapper">
+    <!--id查询:Student findStudentById(Integer id);-->
+    <select id="findStudentById" resultType="student">
+        select  * from student where sid = #{id}
+    </select>
+
+    <resultMap id="listMap" type="com.offcn.pojo.Student">
+        <id column="sid" property="sid"></id>
+        <result column="sname" property="sname"/>
+        <result column="saddress" property="saddress"/>
+        <result column="ssex" property="ssex"/>
+        <result column="sage" property="sage"></result>
+    </resultMap>
+    <!--查询全部学生：List<Student> findAllStudent();-->
+    <select id="findAllStudent" resultMap="listMap">
+        select * from student
+    </select>
+
+    <!--增加学生：void insertStudent(Student student);-->
+    <insert id="insertStudent">
+        INSERT INTO student(sname,ssex,saddress,sage) values(#{sname},#{ssex}
+        ,#{saddress},#{sage})
+    </insert>
+
+    <!--删除学生：void deleteStudent(Integer id);-->
+    <delete id="deleteStudent" parameterType="int">
+        delete from student where sid =#{id}
+    </delete>
+
+    <!--修改学生：void updateStudent(Student student);-->
+    <update id="updateStudent">
+        update student set sname=#{sname},ssex=#{ssex}
+        ,saddress=#{saddress},sage=#{sage} where sid=#{sid}
+    </update>
+</mapper>

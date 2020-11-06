@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.mapper.RoleMapper">
+    <resultMap id="roleMap" type="role" >
+        <id column="id" property="id"></id>
+        <result column="role_name" property="role_name"></result>
+        <result column="role_desc" property="role_desc"></result>
+        <collection property="users" column="id" select="com.offcn.pojo.User_RoleMapper.findUserById">
+        </collection>
+    </resultMap>
+    <!--通过id查询role和user：List<Role> findRoleAndUser(Integer id);-->
+    <select id="findRoleAndUser" parameterType="integer" resultMap="roleMap">
+        select * from role where id=#{id}
+    </select>
+    <resultMap id="roleMap1" type="role" >
+        <id column="id" property="id"></id>
+        <result column="role_name" property="role_name"></result>
+        <result column="role_desc" property="role_desc"></result>
+        <collection property="users" column="id" select="com.offcn.pojo.User_RoleMapper.findAllUser">
+        </collection>
+    </resultMap>
+
+    <!--全部查询：List<Role> findALL();-->
+    <select id="findALL" resultMap="roleMap1">
+        select * from role
+    </select>
+
+</mapper>
